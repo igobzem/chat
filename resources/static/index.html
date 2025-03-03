@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Chat</title>
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
-<body>
-
-<div id="chat-box">
+<body onload="onChatLoaded()">
+<main>
+    <div class="connect">
+        <button id="connect">connect</button>
+    </div>
     <div id="messages">
     </div>
-    <form>
-        <div id="input-msg-box">
-            <input id="input-msg" placeholder="Type a message"/>
-            <button id="send-msg-btn" type='button'>
-                <img src="send-message.jpg" alt="send-msg"/>
-            </button>
-        </div>
-    </form>
-</div>
-<script src="index.js"></script></body>
+    <div class="message-tools">
+        <textarea id="input-msg" placeholder="message from"></textarea>
+        <button id="send-msg-btn"></button>
+    </div>
+</main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.0/sockjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="index.js"></script>
+</body>
 </html>

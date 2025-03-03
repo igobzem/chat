@@ -1,12 +1,88 @@
-document.getElementById("send-msg-btn").addEventListener("click", function (event) {
-    let input = document.getElementById("input-msg");
-    if (input.value !== "") {
-        let messages = document.getElementById("messages");
-        const newMessage = document.createElement("div");
-        newMessage.textContent = input.value;
-        newMessage.classList.add("message");
-        messages.appendChild(newMessage);
-        newMessage.scrollIntoView({"behavior": "smooth"});
-        input.value = "";
+var stompClient = null;
+
+connect();
+
+function appendMessage(text) {
+    const messages = document.getElementById('messages');
+    let div = document.createElement('div');
+    div.className = 'message';
+    div.appendChild(document.createTextNode(text));
+    messages.appendChild(div);
+    return div;
+}
+
+function onClickSend() {
+    let textArea = document.getElementById('input-msg');
+    let text = textArea.value.trim();
+    if (text) {
+        let div = appendMessage(text);
+        textArea.value = '';
+        div.scrollIntoView({"behavior": "smooth"});
+        stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(text));
     }
-})
+
+}
+
+function onChatLoaded() {
+    console.log("Chat is loading ...");
+    document.getElementById('send-msg-btn').addEventListener('click', onClickSend);
+    console.log("Chat is loaded....");
+}
+
+function connect() {
+    if (stompClient == null) {
+        var socket = new SockJS('/ws');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, onConnected, onError);
+    }
+}
+
+function onConnected() {
+    // Subscribe to the Public Topic
+    stompClient.subscribe('/topic/publicChat', onMessageReceived);
+    console.log("subscribe");
+
+    // Tell your username to the server
+//    stompClient.send("/app/chat.addUser",
+//
+//        {},
+//        JSON.stringify({sender: username, type: 'JOIN'})
+//    )
+
+}
+
+function onError(error) {
+    console.log('Could not connect to WebSocket server. Please refresh this page to try again!');
+}
+
+function onMessageReceived(payload) {
+    var message = JSON.parse(payload.body);
+    console.log("received "+ message);
+
+//    var messageElement = document.createElement('li');
+//
+//    if(message.type === 'JOIN') {
+//        messageElement.classList.add('event-message');
+//        message.content = message.sender + ' joined!';
+//    } else if (message.type === 'LEAVE') {
+//        messageElement.classList.add('event-message');
+//        message.content = message.sender + ' left!';
+//    } else {
+//        messageElement.classList.add('chat-message');
+//        var usernameElement = document.createElement('strong');
+//        usernameElement.classList.add('nickname');
+//        var usernameText = document.createTextNode(message.sender);
+//        var usernameText = document.createTextNode(message.sender);
+//        usernameElement.appendChild(usernameText);
+//        messageElement.appendChild(usernameElement);
+//    }
+//
+//    var textElement = document.createElement('span');
+//    var messageText = document.createTextNode(message.content);
+//    textElement.appendChild(messageText);
+//
+//    messageElement.appendChild(textElement);
+//
+//    messageArea.appendChild(messageElement);
+//    messageArea.scrollTop = messageArea.scrollHeight;
+}

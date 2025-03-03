@@ -1,0 +1,48 @@
+body {
+    font-family: "Calibri", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+    width: 100%;
+}
+
+.message-tools {
+    display: flex;
+    flex-direction: row;
+}
+
+.message-tools textarea {
+    border: 1px solid silver;
+    flex-grow: 1;
+    height: 64px;
+}
+
+.message-tools button {
+    border: 1px solid silver;
+    width: 125px;
+    background: url('send-message.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+#messages {
+    width: 300px;
+    height: 200px;
+    border: 1px solid silver;
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+.message:nth-child(odd) {
+    background: aliceblue;
+}
+
+.message:nth-child(even) {
+    background: antiquewhite;
