@@ -19,6 +19,7 @@ function onClickSend() {
         textArea.value = '';
         div.scrollIntoView({"behavior": "smooth"});
         stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(text));
+        console.log("send message..."+text);
     }
 
 }
