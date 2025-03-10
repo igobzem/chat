@@ -8,6 +8,7 @@ function appendMessage(text) {
     div.className = 'message';
     div.appendChild(document.createTextNode(text));
     messages.appendChild(div);
+    div.scrollIntoView({"behavior": "smooth"});
     return div;
 }
 
@@ -15,9 +16,8 @@ function onClickSend() {
     let textArea = document.getElementById('input-msg');
     let text = textArea.value.trim();
     if (text) {
-        let div = appendMessage(text);
+   //     let div = appendMessage(text);
         textArea.value = '';
-        div.scrollIntoView({"behavior": "smooth"});
         stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(text));
         console.log("send message..."+text);
     }
@@ -59,6 +59,7 @@ function onError(error) {
 function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
     console.log("received "+ message);
+    appendMessage(message);
 
 //    var messageElement = document.createElement('li');
 //

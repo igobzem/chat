@@ -40,9 +40,7 @@ main {
     padding: 10px;
 }
 
-.message:nth-child(odd) {
+.message {
     background: aliceblue;
 }
 
-.message:nth-child(even) {
-    background: antiquewhite;
