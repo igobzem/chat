@@ -26,9 +26,6 @@ public class Message {
         this.content = content;
     }
 
-    public Message() {
-    }
-
     @Override
     public String toString() {
         return "Message{" +
