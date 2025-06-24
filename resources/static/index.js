@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const messages = document.getElementById('messages');
 
     var stompClient = null;
+    var userName = null;
 
     function connect() {
         console.log('connecting....');
@@ -25,19 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Could not connect to WebSocket server. Please refresh this page to try again!');
     }
 
-        function sendMessage(event) {
-            const messageContent = inputMsg.value.trim();
-                console.log("send "+messageContent);
+    function sendMessage(event) {
+        const messageContent = inputMsg.value.trim();
+        console.log("send "+messageContent);
+
+        console.log("userName "+userName);
             if (messageContent && stompClient) {
                 const chatMessage = {
                     content: messageContent,
-                    from: 'User' // Replace with actual user name if available
+                    from: userName
                 };
                 stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
                 inputMsg.value = '';
             }
             event.preventDefault();
-        }
+    }
 
 
 
@@ -46,10 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
     div.style.display = 'none';
     const container = document.getElementById('chat');
     container.style.display = 'flex';
+    const messages = document.getElementById('messages');
+    messages.style.display = 'block';
+
     console.log("hide");
 
     const userNameElement = document.getElementById('input-username');
-    const userName = userNameElement.value.trim();
+    userName = userNameElement.value.trim();
     console.log("userName " + userName);
     const addUser = {
           content: userName
@@ -64,16 +70,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
       function onMessageReceived(payload) {
-
           const message = JSON.parse(payload.body);
-          console.log("receive "+message);
           const messageElement = document.createElement('div');
           messageElement.classList.add('message');
           messageElement.textContent = message.content;
           messages.appendChild(messageElement);
           messages.scrollTop = messages.scrollHeight;
-      }
+     }
 
+     function getUser() {
+          fetch("/api/getUser")
+          .then(function(res) {
+              return res.json();
+          })
+          .then(function(data) {
+             console.log("USER:"+data.from);
+             return data.from;
+          });
+     }
 
     sendMsgBtn.addEventListener('click', sendMessage);
     sendUserNameBnt.addEventListener('click', hideDiv);
