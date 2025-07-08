@@ -1,46 +1,33 @@
 package chat;
 
+import chat.dto.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
 public class Controller {
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
 
-    private String userName;
+    private List<Message> messages = new ArrayList<>();
 
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/publicChat")
-    public String sendMessage(String chatMessage) {
-        return chatMessage;
+    public Message sendMessage(@RequestBody Message message) {
+        messages.add(message);
+        logger.info("messages "+messages);
+        return message;
     }
 
-    @CrossOrigin(origins = "*")
-    @PostMapping("/api/addUser")
-    public void addUser(@RequestBody Map<String, String> payload) {
-        String name = payload.get("content");
-        userName = name;
-        logger.info("content "+name);
+    @GetMapping("/api/getMessages")
+    public List<Message> getMessages() {
+        return messages;
     }
-
-
-    @GetMapping("/api/getUser")
-    public Map<String,String> getUser() {
-        Map<String,String> result = new HashMap<>();
-        result.put("from", userName);
-        logger.info("from "+userName);
-        return result;
-    }
-
-    @GetMapping("/api/getUserName")
-    public String getUserName() {
-        return userName;
-    }
-
 }

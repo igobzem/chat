@@ -46,6 +46,15 @@
     display: none;
 }
 
+.message-container {
+    background: aliceblue;
+}
+.sender {
+
+}
+.date {
+
+}
 .message {
     background: aliceblue;
 }

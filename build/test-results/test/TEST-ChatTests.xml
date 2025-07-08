@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ChatTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-08T06:27:03" hostname="DESKTOP-MBUUH4B" time="21.753">
+  <properties/>
+  <testcase name="start" classname="ChatTests" time="21.753"/>
+  <system-out><![CDATA[?[1;31m
+Start test 1?[0m
+?[0;34m
+?[0m?[0;34m  .   ____          _            __ _ _
+?[0m?[0;34m /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+?[0m?[0;34m( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+?[0m?[0;34m \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+?[0m?[0;34m  '  |____| .__|_| |_|_| |_\__, | / / / /
+?[0m?[0;34m =========|_|==============|___/=/_/_/_/
+?[0m?[0;34m :: Spring Boot ::                (v3.2.0)
+?[0m?[0;34m
+?[0m?[0;34m2025-07-08T09:27:11.285+03:00  INFO 27144 --- [    Test worker] chat.Main                                : Starting Main using Java 19.0.2 with PID 27144 (started by igobz in C:\work\Real-time Chat\Real-time Chat\task)
+?[0m?[0;34m2025-07-08T09:27:11.288+03:00  INFO 27144 --- [    Test worker] chat.Main                                : No active profile set, falling back to 1 default profile: "default"
+?[0m?[0;34m2025-07-08T09:27:12.801+03:00  INFO 27144 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28852 (http)
+?[0m?[0;34m2025-07-08T09:27:12.812+03:00  INFO 27144 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2025-07-08T09:27:12.813+03:00  INFO 27144 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+?[0m?[0;34m2025-07-08T09:27:12.873+03:00  INFO 27144 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2025-07-08T09:27:12.874+03:00  INFO 27144 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1519 ms
+?[0m?[0;34m2025-07-08T09:27:13.370+03:00  INFO 27144 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+?[0m?[0;34m2025-07-08T09:27:13.856+03:00  INFO 27144 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2025-07-08T09:27:13.948+03:00  INFO 27144 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28852 (http) with context path ''
+?[0m?[0;34m2025-07-08T09:27:13.952+03:00  INFO 27144 --- [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+?[0m?[0;34m2025-07-08T09:27:13.954+03:00  INFO 27144 --- [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@18989e0]]
+?[0m?[0;34m2025-07-08T09:27:13.955+03:00  INFO 27144 --- [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+?[0m?[0;34m2025-07-08T09:27:13.968+03:00  INFO 27144 --- [    Test worker] chat.Main                                : Started Main in 3.108 seconds (process running for 10.813)
+?[0;34m2025-07-08T09:27:15.098+03:00  INFO 27144 --- [io-28852-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+?[0m?[0;34m2025-07-08T09:27:15.099+03:00  INFO 27144 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+?[0m?[0;34m2025-07-08T09:27:15.102+03:00  INFO 27144 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+?[0m?[1;31m
+Start test 2?[0m
+?[1;31m
+Start test 3?[0m
+?[1;31m
+Start test 4?[0m
+?[1;31m
+Start test 5?[0m
+?[1;31m
+Start test 6?[0m
+?[0;34m2025-07-08T09:27:15.930+03:00  INFO 27144 --- [tboundChannel-1] chat.WebSocketEventListener              : Received a new web socket connection
+?[1;31m
+Start test 7?[0m
+?[1;31m
+Start test 8?[0m
+?[1;31m
+Start test 9?[0m
+?[1;31m
+Start test 10?[0m
+?[0;34m2025-07-08T09:27:16.825+03:00  INFO 27144 --- [tboundChannel-2] chat.WebSocketEventListener              : Received a new web socket connection
+?[1;31m
+Start test 11?[0m
+?[1;31m
+Start test 12?[0m
+?[1;31m
+Start test 13?[0m
+?[1;31m
+Start test 14?[0m
+?[1;31m
+Start test 15?[0m
+?[1;31m
+Start test 16?[0m
+?[1;31m
+Start test 17?[0m
+?[1;31m
+Start test 18?[0m
+?[1;31m
+Start test 19?[0m
+?[1;31m
+Start test 20?[0m
+?[1;31m
+Start test 21?[0m
+?[0;34m2025-07-08T09:27:17.196+03:00  INFO 27144 --- [boundChannel-13] chat.Controller                          : messages [Message{Message from A_USER_3237: Test message 636062915]
+?[1;31m
+Start test 22?[0m
+?[1;31m
+Start test 23?[0m
+?[1;31m
+Start test 24?[0m
+?[0;34m2025-07-08T09:27:17.634+03:00  INFO 27144 --- [boundChannel-16] chat.Controller                          : messages [Message{Message from A_USER_3237: Test message 636062915, Message{Message from B_USER_3245: Test message -574536312]
+?[1;31m
+Start test 25?[0m
+?[1;31m
+Start test 26?[0m
+?[1;31m
+Start test 27?[0m
+?[1;31m
+Start test 28?[0m
+?[0;34m2025-07-08T09:27:18.311+03:00  INFO 27144 --- [nboundChannel-2] chat.Controller                          : messages [Message{Message from A_USER_3237: Test message 636062915, Message{Message from B_USER_3245: Test message -574536312, Message{Message from A_USER_3237: Test message -1668676179]
+?[1;31m
+Start test 29?[0m
+?[1;31m
+Start test 30?[0m
+?[1;31m
+Start test 31?[0m
+?[1;31m
+Start test 32?[0m
+?[0;34m2025-07-08T09:27:18.966+03:00  INFO 27144 --- [nboundChannel-5] chat.Controller                          : messages [Message{Message from A_USER_3237: Test message 636062915, Message{Message from B_USER_3245: Test message -574536312, Message{Message from A_USER_3237: Test message -1668676179, Message{Message from B_USER_3245: Test message 1014326890]
+?[1;31m
+Start test 33?[0m
+?[1;31m
+Start test 34?[0m
+?[1;31m
+Start test 35?[0m
+?[1;31m
+Start test 36?[0m
+?[1;31m
+Start test 37?[0m
+?[0;34m2025-07-08T09:27:19.648+03:00  INFO 27144 --- [nboundChannel-8] chat.Controller                          : messages [Message{Message from A_USER_3237: Test message 636062915, Message{Message from B_USER_3245: Test message -574536312, Message{Message from A_USER_3237: Test message -1668676179, Message{Message from B_USER_3245: Test message 1014326890, Message{Message from A_USER_3237: Test message 805859740]
+?[1;31m
+Start test 38?[0m
+?[1;31m
+Start test 39?[0m
+?[1;31m
+Start test 40?[0m
+?[0;34m2025-07-08T09:27:20.982+03:00  INFO 27144 --- [boundChannel-13] chat.WebSocketEventListener              : Received a new web socket connection
+?[1;31m
+Start test 41?[0m
+?[1;31m
+Start test 42?[0m
+?[1;31m
+Start test 43?[0m
+?[1;31m
+Start test 44?[0m
+?[1;31m
+Start test 45?[0m
+?[1;31m
+Start test 46?[0m
+?[1;31m
+Start test 47?[0m
+?[1;31m
+Start test 48?[0m
+?[0m?[0;34m2025-07-08T09:27:21.263+03:00  INFO 27144 --- [boundChannel-16] chat.Controller                          : messages [Message{Message from A_USER_3237: Test message 636062915, Message{Message from B_USER_3245: Test message -574536312, Message{Message from A_USER_3237: Test message -1668676179, Message{Message from B_USER_3245: Test message 1014326890, Message{Message from A_USER_3237: Test message 805859740, Message{Message from C_USER_5215: Test message 1221079199]
+?[1;31m
+Start test 49?[0m
+?[1;31m
+Start test 50?[0m
+?[1;31m
+Start test 51?[0m
+?[1;31m
+Start test 52?[0m
+?[1;31m
+Start test 53?[0m
+?[0m?[0;34m2025-07-08T09:27:22.631+03:00  INFO 27144 --- [nboundChannel-2] chat.Controller                          : messages [Message{Message from A_USER_3237: Test message 636062915, Message{Message from B_USER_3245: Test message -574536312, Message{Message from A_USER_3237: Test message -1668676179, Message{Message from B_USER_3245: Test message 1014326890, Message{Message from A_USER_3237: Test message 805859740, Message{Message from C_USER_5215: Test message 1221079199, Message{Message from C_USER_5215: Test message 1713286968]
+?[1;31m
+Start test 54?[0m
+?[1;31m
+Start test 55?[0m
+?[1;31m
+Start test 56?[0m
+2025-07-08T09:27:24.246+03:00  INFO 27144 --- [io-28852-exec-7] chat.WebSocketEventListener              : Received a SessionDisconnectEvent SessionDisconnectEvent[sessionId=4a5r3uzo, CloseStatus[code=1000, reason=null]]
+2025-07-08T09:27:24.255+03:00  INFO 27144 --- [io-28852-exec-8] chat.WebSocketEventListener              : Received a SessionDisconnectEvent SessionDisconnectEvent[sessionId=wrvh4eoc, CloseStatus[code=1000, reason=null]]
+2025-07-08T09:27:24.267+03:00  INFO 27144 --- [io-28852-exec-9] chat.WebSocketEventListener              : Received a SessionDisconnectEvent SessionDisconnectEvent[sessionId=0exm5ko0, CloseStatus[code=1000, reason=null]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
